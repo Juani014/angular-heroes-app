@@ -3,18 +3,19 @@
     <mat-grid-tile>
       <mat-spinner></mat-spinner>
     </mat-grid-tile>
-  </mat-grid-list>
-</ng-template>
+    </mat-grid-list>
+  </ng-template>
 
-<div *ngIf="hero; else divLoading" class="grid p-2">
-  <mat-card class="col-12 sm:col-6">
+  <div *ngIf="hero; else divLoading" class="grid p-2">
+  <span class="hidden md:block md:col-1 lg:block lg:col-3"></span>
+  <mat-card class="col-12 sm:col-6 md:col-5 lg:col-3">
     <mat-card-header>
       <mat-card-title>{{ hero.superhero }}</mat-card-title>
       <mat-card-subtitle>{{ hero.alter_ego }}</mat-card-subtitle>
     </mat-card-header>
     <img [src]="hero | heroImage" [alt]="hero.superhero" mat-card-image>
   </mat-card>
-  <mat-card class="col-12 sm:col-6">
+  <mat-card class="col-12 sm:col-6 md:col-5 lg:col-3">
     <mat-card-header>
       <mat-card-title>Información</mat-card-title>
       <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
@@ -37,7 +38,6 @@
           <mat-icon matListItemIcon>publish</mat-icon>
           <span matListItemTitle>Publisher: </span>
           <span matListItemLine>{{ hero.publisher }}</span>
-          <!-- TODO: add images of hero -->
         </mat-list-item>
       </mat-list>
     </mat-card-content>
@@ -45,4 +45,5 @@
       <button mat-button color="primary" (click)="goBack()">Volver al Listado</button>
     </mat-card-footer>
   </mat-card>
+  <span class="hidden lg:block lg:col-3"></span>
 </div>
